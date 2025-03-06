@@ -1,0 +1,189 @@
+@import url('https://fonts.cdnfonts.com/css/general-sans');
+@import "tailwindcss";
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-white font-['General_Sans'];
+  background: radial-gradient(circle at top, #030014 10%, #000000 50%);
+}
+
+.head-text {
+  @apply text-3xl sm:text-4xl font-semibold text-transparent bg-clip-text;
+  background-image: linear-gradient(to right, #4A00E0, #1E90FF);
+}
+
+.btn {
+  @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md transition-all duration-300 active:scale-95 text-white mx-auto shadow-lg;
+  background: linear-gradient(135deg, #030014, #1E003E);
+  box-shadow: 0 0 15px #4A00E0;
+}
+
+.arrow-btn {
+  @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full;
+  background: linear-gradient(135deg, #030014, #1E003E);
+  box-shadow: 0 0 10px #1E90FF;
+}
+
+.grid-container {
+  @apply w-full h-full border bg-[#000000] border-[#1E003E] rounded-lg p-4 sm:p-7 flex flex-col gap-5 shadow-md shadow-[#4A00E0]/30;
+}
+
+
+@layer utilities {
+  .c-space {
+    @apply px-5 sm:px-10;
+  }
+
+  .head-text {
+    @apply text-3xl sm:text-4xl font-semibold text-transparent bg-clip-text;
+    background-image: linear-gradient(to right, #A855F7, #9333EA);
+  }
+
+  .nav-ul {
+    @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
+  }
+
+  .nav-li {
+    @apply text-neutral-400 hover:text-white font-['General_Sans'] max-sm:hover:bg-[#240046] max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 transition-all duration-300;
+  }
+
+  .nav-li a {
+    @apply text-lg md:text-base transition-all;
+  }
+
+  .nav-sidebar {
+    @apply absolute left-0 right-0 bg-[#1a0328] backdrop-blur-md transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
+  }
+
+  .text-gray_gradient {
+    background: linear-gradient(to right, #A855F7, #9333EA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn {
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-[#240046] transition-all duration-300 active:scale-95 text-white mx-auto shadow-lg shadow-[#9333EA]/40 hover:bg-[#320058] hover:shadow-[#A855F7]/50;
+  }
+
+  .btn-ping {
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75;
+  }
+
+  .btn-ping_dot {
+    @apply relative inline-flex rounded-full h-3 w-3 bg-purple-400;
+  }
+
+  .hero_tag {
+    @apply text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-['General_Sans'] font-black leading-normal text-center;
+    background: linear-gradient(to right, #A855F7, #9333EA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .grid-container {
+    @apply w-full h-full border border-[#320058] bg-[#1a0328] rounded-lg p-4 sm:p-7 flex flex-col gap-5;
+  }
+
+  .grid-headtext {
+    @apply text-xl font-semibold mb-2 text-white;
+  }
+
+  .grid-subtext {
+    @apply text-[#B28EF3] text-base;
+  }
+
+  .copy-container {
+    @apply cursor-pointer flex justify-center items-center gap-2;
+  }
+
+  .arrow-btn {
+    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full bg-[#320058] hover:bg-[#4C007D] shadow-lg shadow-[#A855F7]/30;
+  }
+
+  .tech-logo {
+    @apply w-10 h-10 rounded-md p-2 bg-purple-900/20 backdrop-blur-lg flex justify-center items-center;
+  }
+
+  .client-container {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5 mt-12;
+  }
+
+  .client-review {
+    @apply rounded-lg p-5 md:p-10 col-span-1 bg-[#2B0046]/50;
+  }
+
+  .client-content {
+    @apply flex flex-col lg:flex-row justify-between lg:items-center items-start gap-5 mt-7;
+  }
+
+  .work-container {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-5 mt-12;
+  }
+
+  .work-canvas {
+    @apply col-span-1 rounded-lg bg-[#1a0328] border border-[#320058];
+  }
+
+  .work-content {
+    @apply col-span-2 rounded-lg bg-[#1a0328] border border-[#320058];
+  }
+
+  .work-content_container {
+    @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-[#320058] rounded-lg px-2.5 sm:px-5;
+  }
+
+  .work-content_logo {
+    @apply rounded-3xl w-16 h-16 p-2 bg-[#240046];
+  }
+
+  .work-content_bar {
+    @apply flex-1 w-0.5 mt-4 h-full bg-[#320058] group-hover:bg-[#4C007D] group-last:hidden;
+  }
+
+  .contact-container {
+    @apply max-w-xl relative z-10 px-5 sm:px-10 mt-12;
+  }
+
+  .field-label {
+    @apply text-lg text-[#d4d4d4];
+  }
+
+  .field-input {
+    @apply w-full bg-[#240046] px-5 py-2 min-h-14 rounded-lg placeholder-[#d4d4d4] text-lg text-[#e5e5e5] shadow-[#320058] shadow-2xl focus:outline-none;
+  }
+
+  .field-btn {
+    @apply bg-[#320058] px-5 py-2 min-h-12 rounded-lg shadow-[#A855F7] shadow-2xl flex justify-center items-center text-lg text-white gap-3 hover:bg-[#4C007D] transition-all duration-300;
+  }
+
+  .field-btn_arrow {
+    @apply w-2.5 h-2.5 object-contain invert brightness-0;
+  }
+
+  .social-icon {
+    @apply w-12 h-12 rounded-full flex justify-center items-center bg-[#320058] border border-[#240046] hover:bg-[#4C007D] transition-all;
+  }
+}
+
+/* Waving Hand Animation */
+.waving-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(-4deg); }
+  60% { transform: rotate(10deg); }
+  70% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
